@@ -1,0 +1,5 @@
+debian/tmp/lib/libsysfs.a
+debian/tmp/lib/libsysfs.la
+debian/tmp/lib/libsysfs.so
+debian/tmp/usr/include
+build-tree/*/docs/libsysfs.txt usr/share/doc/libsysfs-dev/

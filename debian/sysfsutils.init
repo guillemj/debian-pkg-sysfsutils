@@ -1,0 +1,43 @@
+#! /bin/sh
+# /etc/init.d/sysfsutils: Set sysfs variables from /etc/sysfs.conf
+#
+# (c) 2005 Martin Pitt <mpitt@debian.org>
+
+CONFFILE=/etc/sysfs.conf
+
+MNTPATH=$(/usr/bin/systool -m 2>/dev/null) || exit 0
+
+[ -r "$CONFFILE" ] || exit 0
+
+case "$1" in
+    start|restart|force-reload)
+	echo -n "Setting sysfs variables..."
+
+	sed  's/#.*$//; /^[[:space:]]*$/d; 
+              s/^[[:space:]]*\([^[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2/' \
+              $CONFFILE | (
+	    while read key val; do
+                if [ "$key" -a "$val" ]; then
+                    if [ -f $MNTPATH/$key ]; then
+                        echo $val > $MNTPATH/$key
+                    else
+                        echo "unknown attribute $key"
+                    fi
+                else
+                    echo "syntax error in $CONFFILE"
+                    exit 1
+                fi
+	    done
+	)
+
+	echo "done."
+	;;
+    stop)
+	;;
+    *)
+	echo "Usage: /etc/init.d/sysfsutils {start|stop|force-reload|restart}"
+	exit 1
+	;;
+esac
+
+

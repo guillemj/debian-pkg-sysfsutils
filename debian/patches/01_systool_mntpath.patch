@@ -1,0 +1,68 @@
+diff -ruN sysfsutils-1.2.0-old/cmd/systool.c sysfsutils-1.2.0/cmd/systool.c
+--- sysfsutils-1.2.0-old/cmd/systool.c	2004-09-13 15:45:15.000000000 +0200
++++ sysfsutils-1.2.0/cmd/systool.c	2005-01-16 20:58:56.783746760 +0100
+@@ -54,7 +54,7 @@
+                                                                                 
+ #define SHOW_ALL		0xff
+ 
+-static char cmd_options[] = "aA:b:c:CdDhpPr:v";
++static char cmd_options[] = "aA:b:c:CdDhmpPr:v";
+ 
+ /*
+  * binary_files - defines existing sysfs binary files. These files will be
+@@ -93,6 +93,7 @@
+ 	fprintf(stdout, "\t-C\t\t\tShow device's children\n");
+ 	fprintf(stdout, "\t-D\t\t\tShow only drivers\n");
+ 	fprintf(stdout, "\t-P\t\t\tShow device's parent\n");
++	fprintf(stdout, "\t-m\t\t\tPrint sysfs mount path and exit\n");
+ }
+ 
+ /**
+@@ -654,6 +655,22 @@
+ 	return 1;
+ }
+ 
++/**
++ * print_mntpath: Print out sysfs mount path. If mount path cannot be
++ * determined, print error message and exit with code 1.
++ */
++static void print_mntpath(void)
++{
++	char path[SYSFS_PATH_MAX];
++
++	if (sysfs_get_mnt_path(path, SYSFS_PATH_MAX) != 0) {
++		fprintf(stderr, "Unable to find sysfs mount point!\n");
++		exit(1);
++	}
++
++	puts(path);
++}
++
+ /* MAIN */
+ int main(int argc, char *argv[])
+ {
+@@ -698,6 +715,10 @@
+ 			usage();
+ 			exit(0);
+ 			break;
++		case 'm':
++			print_mntpath();
++			exit(0);
++			break;
+ 		case 'p':
+ 			show_options |= SHOW_PATH;
+ 			break;
+diff -ruN sysfsutils-1.2.0-old/systool.1 sysfsutils-1.2.0/systool.1
+--- sysfsutils-1.2.0-old/systool.1	2004-09-13 15:45:15.000000000 +0200
++++ sysfsutils-1.2.0/systool.1	2005-01-16 21:00:24.502411496 +0100
+@@ -64,6 +64,10 @@
+ .TP
+ .B \-P
+ Show device's parent
++.TP
++.B \-m
++Print sysfs mount path and exit successfully. If path cannot be determined,
++print error message and exit with 1.
+ 
+ .SH SEE ALSO
+ .P

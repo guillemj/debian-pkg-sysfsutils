@@ -1,0 +1,65 @@
+sysfsutils (1.2.0-5) unstable; urgency=low
+
+  * Install the libsysfs library in /lib instead of /usr/lib. 
+    (closes: #293149)
+
+ -- Martin Pitt <martin.pitt@ubuntu.com>  Wed,  9 Feb 2005 18:56:17 +0100
+
+sysfsutils (1.2.0-4) unstable; urgency=low
+
+  * Bump debhelper build-dependency to >= 4.1.1. (closes: #291557)
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 21 Jan 2005 16:13:31 +0100
+
+sysfsutils (1.2.0-3) unstable; urgency=low
+
+  * sysfsutils.init: Dropped bash variable substitutions, do the mangling in
+    sed instead. Use shell sh instead of bash. (closes: #291022)
+  * sysfs.conf: Do not allow '.' as path component separator any more since
+    '.' appears in regular file names in sysfs.
+
+ -- Martin Pitt <mpitt@debian.org>  Thu, 20 Jan 2005 10:29:03 +0100
+
+sysfsutils (1.2.0-2) unstable; urgency=low
+
+  * sysfsutils.init: Use shell bash instead of sh. (closes: #291011)
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 18 Jan 2005 10:32:59 +0100
+
+sysfsutils (1.2.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Repackaged using cdbs
+  * Adapted README.Examples
+  * Added a proper copyright to debian/copyright  (closes: #290208)
+  * 01_systool_mntpath.patch: Add option -m to systool which prints out sysfs
+    mount path 
+  * Updated package descriptions
+  * Added /etc/init.d/sysfsutils to control sysfs parameters with
+    /etc/sysfs.conf (closes: #286327)
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 16 Jan 2005 22:08:00 +0100
+
+sysfsutils (1.1.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 31 Mar 2004 14:14:18 +0200
+
+sysfsutils (1.0.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #230420)
+  * Removed README.Debian since /sys is now automatically mounted by
+    mountkernfs
+  * Removed lsbus manpage and description (program does not exist any more,
+    systool has all functionality lsbus had)
+  * my contributed systool.1 man page was included upstream
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 24 Feb 2004 13:29:37 +0100
+
+sysfsutils (0.3.0-1) unstable; urgency=low
+
+  * Initial Release (closes: #215257)
+
+ -- Martin Pitt <mpitt@debian.org>  Thu,  6 Nov 2003 11:07:54 +0100
+
