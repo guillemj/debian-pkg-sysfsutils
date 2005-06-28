@@ -5,8 +5,6 @@
 
 CONFFILE=/etc/sysfs.conf
 
-MNTPATH=$(/usr/bin/systool -m 2>/dev/null) || exit 0
-
 [ -r "$CONFFILE" ] || exit 0
 
 case "$1" in
@@ -18,8 +16,8 @@ case "$1" in
               $CONFFILE | (
 	    while read key val; do
                 if [ "$key" -a "$val" ]; then
-                    if [ -f $MNTPATH/$key ]; then
-                        echo $val > $MNTPATH/$key
+                    if [ -f /sys/$key ]; then
+                        echo $val > /sys/$key
                     else
                         echo "unknown attribute $key"
                     fi
