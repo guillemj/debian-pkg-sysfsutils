@@ -2,7 +2,7 @@ Source: sysfsutils
 Section: libs
 Priority: extra
 Maintainer: Martin Pitt <mpitt@debian.org>
-Build-Depends: cdbs, debhelper (>= 4.1.1)
+Build-Depends: cdbs, debhelper (>= 4.2)
 Standards-Version: 3.6.1
 
 Package: libsysfs-dev
@@ -47,3 +47,18 @@ Description: sysfs query tool and boot-time setup
  .
  If you need sysfs queries in own programs, then you may want to use the
  libsysfs library directly (package libsysfs-dev).
+
+Package: libsysfs1-udeb
+XC-Package-Type: udeb
+Section: debian-installer
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}
+Provides: libsysfs1
+Description: interface library to sysfs
+ Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
+ tree of system devices. libsysfs provides a stable programming
+ interface to sysfs and eases querying system devices and their
+ attributes.
+ .
+ This is a minimal package for use in debian-installer.

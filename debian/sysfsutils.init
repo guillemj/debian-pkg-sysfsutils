@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/sh -e
 # /etc/init.d/sysfsutils: Set sysfs variables from /etc/sysfs.conf
 #
 # (c) 2005 Martin Pitt <mpitt@debian.org>
@@ -12,21 +12,33 @@ case "$1" in
 	echo -n "Setting sysfs variables..."
 
 	sed  's/#.*$//; /^[[:space:]]*$/d; 
-              s/^[[:space:]]*\([^[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2/' \
-              $CONFFILE | (
-	    while read key val; do
-                if [ "$key" -a "$val" ]; then
-                    if [ -f /sys/$key ]; then
-                        echo $val > /sys/$key
+              s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' \
+              $CONFFILE | {
+	    while read f1 f2 f3; do
+                if [ "$f1" = "mode" -a "$f2" -a "$f3" ]; then
+                    if [ -f "/sys/$f2" ]; then
+                        chmod "$f3" "/sys/$f2"
                     else
-                        echo "unknown attribute $key"
+                        echo "unknown attribute $f2"
+                    fi
+                elif [ "$f1" = "owner" -a "$f2" -a "$f3" ]; then
+                    if [ -f "/sys/$f2" ]; then
+                        chown "$f3" "/sys/$f2"
+                    else
+                        echo "unknown attribute $f2"
+                    fi
+                elif [ "$f1" -a "$f2" -a -z "$f3" ]; then
+                    if [ -f "/sys/$f1" ]; then
+                        echo -n "$f2" > "/sys/$f1"
+                    else
+                        echo "unknown attribute $f1"
                     fi
                 else
-                    echo "syntax error in $CONFFILE"
+                    echo "syntax error in $CONFFILE: '$f1' '$f2' '$f3'"
                     exit 1
                 fi
 	    done
-	)
+	}
 
 	echo "done."
 	;;
