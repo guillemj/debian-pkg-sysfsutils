@@ -15,19 +15,19 @@ case "$1" in
               s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' \
               $CONFFILE | {
 	    while read f1 f2 f3; do
-                if [ "$f1" = "mode" -a "$f2" -a "$f3" ]; then
+                if [ "$f1" = "mode" -a -n "$f2" -a -n "$f3" ]; then
                     if [ -f "/sys/$f2" ]; then
                         chmod "$f3" "/sys/$f2"
                     else
                         echo "unknown attribute $f2"
                     fi
-                elif [ "$f1" = "owner" -a "$f2" -a "$f3" ]; then
+                elif [ "$f1" = "owner" -a -n "$f2" -a -n "$f3" ]; then
                     if [ -f "/sys/$f2" ]; then
                         chown "$f3" "/sys/$f2"
                     else
                         echo "unknown attribute $f2"
                     fi
-                elif [ "$f1" -a "$f2" -a -z "$f3" ]; then
+                elif [ "$f1" -a -n "$f2" -a -z "$f3" ]; then
                     if [ -f "/sys/$f1" ]; then
                         echo -n "$f2" > "/sys/$f1"
                     else
