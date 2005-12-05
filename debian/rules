@@ -9,3 +9,6 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS := --libdir=/lib
 
+install/libsysfs1-udeb::
+	cp -L debian/tmp/lib/libsysfs.so.? debian/libsysfs1-udeb/lib
+	chmod 644 $(DEB_DESTDIR)/lib/*.so
