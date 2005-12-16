@@ -8,7 +8,7 @@ Standards-Version: 3.6.1
 Package: libsysfs-dev
 Section: libdevel
 Architecture: any
-Depends: libsysfs1 (= ${Source-Version})
+Depends: libsysfs2 (= ${Source-Version})
 Description: interface library to sysfs - development files
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming
@@ -19,7 +19,7 @@ Description: interface library to sysfs - development files
  programs using libsysfs: C headers, a static library, documentation
  and example programs.
 
-Package: libsysfs1
+Package: libsysfs2
 Architecture: any
 Depends: ${shlibs:Depends}
 Description: interface library to sysfs
@@ -48,13 +48,13 @@ Description: sysfs query tool and boot-time setup
  If you need sysfs queries in own programs, then you may want to use the
  libsysfs library directly (package libsysfs-dev).
 
-Package: libsysfs1-udeb
+Package: libsysfs2-udeb
 XC-Package-Type: udeb
 Section: debian-installer
 Priority: optional
 Architecture: any
 Depends: ${shlibs:Depends}
-Provides: libsysfs1
+Provides: libsysfs2
 Description: interface library to sysfs
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming

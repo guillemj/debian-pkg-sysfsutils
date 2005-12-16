@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-DEB_TAR_SRCDIR=sysfsutils-1.3.0
+DEB_TAR_SRCDIR=sysfsutils-2.0.0
 
 include /usr/share/cdbs/1/rules/tarball.mk
 include /usr/share/cdbs/1/class/autotools.mk
@@ -10,5 +10,5 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 DEB_CONFIGURE_EXTRA_FLAGS := --libdir=/lib
 
 install/libsysfs1-udeb::
-	cp -L debian/tmp/lib/libsysfs.so.? debian/libsysfs1-udeb/lib
+	cp -L debian/tmp/lib/libsysfs.so.? debian/libsysfs2-udeb/lib
 	chmod 644 $(DEB_DESTDIR)/lib/*.so
