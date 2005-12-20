@@ -1,3 +1,9 @@
+sysfsutils (2.0.0-2) experimental; urgency=low
+
+  * debian/libsysfs-dev: Install static library into /usr/lib. (See #344067)
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 20 Dec 2005 13:35:09 +0100
+
 sysfsutils (2.0.0-1) experimental; urgency=low
 
   * New upstream version.
