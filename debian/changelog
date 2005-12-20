@@ -1,3 +1,10 @@
+sysfsutils (1.3.0-6) unstable; urgency=low
+
+  * debian/libsysfs-dev.install: Install static library into /usr/lib. 
+    Closes: #344067
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 20 Dec 2005 13:31:33 +0100
+
 sysfsutils (1.3.0-5) unstable; urgency=low
 
   * libsysfs1-udeb: Ship the actual library as libsysfs.so.1 instead of a
