@@ -1,3 +1,10 @@
+sysfsutils (1.3.0-7) unstable; urgency=low
+
+  * Install .so symlink in /usr/lib, not in /lib. Closes: #346582
+  * Do not install the .la file, it just confuses libtool. Closes: #347901
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 13 Jan 2006 17:00:00 +0100
+
 sysfsutils (1.3.0-6) unstable; urgency=low
 
   * debian/libsysfs-dev.install: Install static library into /usr/lib. 
