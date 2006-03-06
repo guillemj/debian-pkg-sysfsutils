@@ -1,3 +1,15 @@
+sysfsutils (2.0.0-5) unstable; urgency=medium
+
+  * Urgency medium since this only fixes two RC bugs and libsysfs blocks
+    move to testing for other packages.
+  * debian/rules: Fix installation of library into the udeb. Closes: #355385
+  * Add debian/patches/get_mnt_path_check.patch:
+    - sysfs_get_mnt_path(): Check that sysfs is actually mounted and fail if
+      not. Fixes behavioural breakage compared to 1.3.
+    - Closes: #355540
+
+ -- Martin Pitt <mpitt@debian.org>  Mon,  6 Mar 2006 19:08:56 +0100
+
 sysfsutils (2.0.0-4) unstable; urgency=low
 
   * Upload to unstable.
