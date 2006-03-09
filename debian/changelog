@@ -1,3 +1,11 @@
+sysfsutils (2.0.0-6) unstable; urgency=low
+
+  * debian/rules: Generate shlibs for udev files. Thanks to Frans Pop! 
+    Closes: #355965
+  * debian/control: Bump debhelper dependency to >= 5.0.22.
+
+ -- Martin Pitt <mpitt@debian.org>  Thu,  9 Mar 2006 08:53:44 +0100
+
 sysfsutils (2.0.0-5) unstable; urgency=medium
 
   * Urgency medium since this only fixes two RC bugs and libsysfs blocks

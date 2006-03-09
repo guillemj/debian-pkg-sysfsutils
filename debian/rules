@@ -8,6 +8,7 @@ include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/rules/simple-patchsys.mk
 
 DEB_CONFIGURE_EXTRA_FLAGS := --libdir=/lib
+DEB_DH_MAKESHLIBS_ARGS_libsysfs2 := --add-udeb="libsysfs2-udeb"
 
 install/libsysfs2-udeb::
 	cp -L debian/tmp/lib/libsysfs.so.? debian/$(cdbs_curpkg)/lib
