@@ -4,7 +4,7 @@ This directory contains the test programs for libsysfs as examples how
 to use this library. They have to be linked against libsysfs, so
 compile them with e. g. 
 
-    gcc -I/usr/include/sysfs -o get_device get_device.c -lsysfs
+    gcc `pkg-config --cflags --libs libsysfs` -o get_device get_device.c
 
 The official and extensive documentation of libsysfs' API can be found
 in /usr/share/doc/libsysfs-dev/libsysfs.txt.gz.

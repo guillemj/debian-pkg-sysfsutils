@@ -1,6 +1,6 @@
---- sysfsutils-2.0.0.orig/sysfsutils-2.0.0.tar.gz.cdbs-config_list
-+++ sysfsutils-2.0.0/sysfsutils-2.0.0.tar.gz.cdbs-config_list
+--- sysfsutils-2.1.0.orig/sysfsutils-2.1.0.tar.gz.cdbs-config_list
++++ sysfsutils-2.1.0/sysfsutils-2.1.0.tar.gz.cdbs-config_list
 @@ -0,0 +1,3 @@
-+sysfsutils-2.0.0/config.guess
-+sysfsutils-2.0.0/config.h.in
-+sysfsutils-2.0.0/config.sub
++sysfsutils-2.1.0/config.guess
++sysfsutils-2.1.0/config.h.in
++sysfsutils-2.1.0/config.sub

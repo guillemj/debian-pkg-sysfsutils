@@ -1,3 +1,19 @@
+sysfsutils (2.1.0-1) unstable; urgency=low
+
+  * New upstream version. Closes: #385639
+    - Add sysfs_open_link_list().
+    - Add sysfs_open_device_tree().
+    - Add C++ compilation suport.
+    - Add subsystem in sysfs_device.
+  * Add watch file.
+  * debian/sysfs.conf: Consistently use whitespace in examples.
+    Closes: #382437
+  * Add debian/local/libsysfs.pc: Provide a pkg-config data file and install
+    it into libsysfs-dev. Closes: #385742
+  * debian/README.Examples: Use pkg-config in build instructions.
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 29 Oct 2006 18:15:24 +0100
+
 sysfsutils (2.0.0-7) unstable; urgency=low
 
   * Raise libsysfs{2,-dev} to priority optional, since reverse dependencies
