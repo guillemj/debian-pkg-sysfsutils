@@ -1,5 +1,18 @@
 #! /bin/sh -e
-# /etc/init.d/sysfsutils: Set sysfs variables from /etc/sysfs.conf
+
+### BEGIN INIT INFO
+# Provides:          sysfsconf
+# Required-Start:    mountkernfs
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      S 0 1 6
+# Short-Description: Set sysfs variables from /etc/sysfs.conf
+# Description:       Similarly to /etc/init.d/procps.sh, you can configure
+#                    values for sysfs variables (such as power management
+#                    defaults) and /sys file permissions in /etc/sysfs.conf.
+### END INIT INFO
+
+# /etc/init.d/sysfsutils: 
 #
 # (c) 2005 Martin Pitt <mpitt@debian.org>
 

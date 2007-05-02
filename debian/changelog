@@ -1,3 +1,14 @@
+sysfsutils (2.1.0-2) unstable; urgency=low
+
+  * Bump libsysfs2 priority to 'important', since pcmciautils depends on it.
+  * debian/control: Bump standards version.
+  * debian/copyright: Update FSF address.
+  * debian/control: Drop the "Provides: libsysfs2" from the udeb, as per
+    request from Frans Pop. Closes: #419610
+  * debian/sysfsutils.init: Add LSB header.
+
+ -- Martin Pitt <mpitt@debian.org>  Wed, 02 May 2007 23:43:03 +0200
+
 sysfsutils (2.1.0-1) unstable; urgency=low
 
   * New upstream version. Closes: #385639
