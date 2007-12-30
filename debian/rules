@@ -13,3 +13,6 @@ DEB_DH_MAKESHLIBS_ARGS_libsysfs2 := --add-udeb="libsysfs2-udeb"
 install/libsysfs2-udeb::
 	cp -L debian/tmp/lib/libsysfs.so.? debian/$(cdbs_curpkg)/lib
 	chmod 644 $(DEB_DESTDIR)/lib/*.so
+
+binary-fixup/sysfsutils::
+	chrpath -d debian/$(cdbs_curpkg)/usr/bin/*

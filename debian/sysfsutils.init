@@ -5,7 +5,7 @@
 # Required-Start:    mountkernfs
 # Required-Stop:
 # Default-Start:     2 3 4 5
-# Default-Stop:      S 0 1 6
+# Default-Stop:
 # Short-Description: Set sysfs variables from /etc/sysfs.conf
 # Description:       Similarly to /etc/init.d/procps.sh, you can configure
 #                    values for sysfs variables (such as power management
@@ -20,9 +20,11 @@ CONFFILE=/etc/sysfs.conf
 
 [ -r "$CONFFILE" ] || exit 0
 
+. /lib/lsb/init-functions
+
 case "$1" in
     start|restart|force-reload)
-	echo -n "Setting sysfs variables..."
+	log_begin_msg "Setting sysfs variables..."
 
 	sed  's/#.*$//; /^[[:space:]]*$/d; 
               s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' \
@@ -32,28 +34,29 @@ case "$1" in
                     if [ -f "/sys/$f2" ]; then
                         chmod "$f3" "/sys/$f2"
                     else
-                        echo "unknown attribute $f2"
+                        log_failure_msg "unknown attribute $f2"
                     fi
                 elif [ "$f1" = "owner" -a -n "$f2" -a -n "$f3" ]; then
                     if [ -f "/sys/$f2" ]; then
                         chown "$f3" "/sys/$f2"
                     else
-                        echo "unknown attribute $f2"
+                        log_failure_msg "unknown attribute $f2"
                     fi
                 elif [ "$f1" -a -n "$f2" -a -z "$f3" ]; then
                     if [ -f "/sys/$f1" ]; then
                         echo -n "$f2" > "/sys/$f1"
                     else
-                        echo "unknown attribute $f1"
+                        log_failure_msg "unknown attribute $f1"
                     fi
                 else
-                    echo "syntax error in $CONFFILE: '$f1' '$f2' '$f3'"
+                    log_failure_msg "syntax error in $CONFFILE: '$f1' '$f2' '$f3'"
+                    log_end_msg 1
                     exit 1
                 fi
 	    done
 	}
 
-	echo "done."
+	log_end_msg 0
 	;;
     stop)
 	;;

@@ -2,14 +2,14 @@ Source: sysfsutils
 Section: libs
 Priority: extra
 Maintainer: Martin Pitt <mpitt@debian.org>
-Build-Depends: cdbs, debhelper (>= 5.0.22)
-Standards-Version: 3.7.2
+Build-Depends: cdbs, debhelper (>= 5.0.22), chrpath
+Standards-Version: 3.7.3
 
 Package: libsysfs-dev
 Section: libdevel
 Priority: optional
 Architecture: any
-Depends: libsysfs2 (= ${Source-Version})
+Depends: libsysfs2 (= ${binary:Version})
 Description: interface library to sysfs - development files
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming

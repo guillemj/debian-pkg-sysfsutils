@@ -1,3 +1,16 @@
+sysfsutils (2.1.0-3) unstable; urgency=low
+
+  * debian/sysfsutils.init: Fix Default-Stop LSB header to not run in any
+    level, since 'stop' does not do anything. (Closes: #458272, #427033)
+  * debian/sysfsutils.init: Use LSB output commands. (Closes: #457662)
+  * debian/sysfsutils.README.Debian: Fix script name. (Closes: #453312)
+  * Bump Standards-Version (no changes necessary).
+  * debian/control: Replace obsolete ${Source-Version} with ${binary:Version}.
+  * debian/rules: Drop pointless rpath from systool binary. Add chrpath build
+    dependency.
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 30 Dec 2007 21:23:06 +0100
+
 sysfsutils (2.1.0-2) unstable; urgency=low
 
   * Bump libsysfs2 priority to 'important', since pcmciautils depends on it.
