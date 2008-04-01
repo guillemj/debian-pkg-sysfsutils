@@ -44,7 +44,10 @@ case "$1" in
                     fi
                 elif [ "$f1" -a -n "$f2" -a -z "$f3" ]; then
                     if [ -f "/sys/$f1" ]; then
-                        echo -n "$f2" > "/sys/$f1"
+                        # Some fields need a terminating newline, others
+                        # need the terminating newline to be absent :-(
+                         echo -n "$f2" > "/sys/$f1" 2>/dev/null ||
+                            echo "$f2" > "/sys/$f1"
                     else
                         log_failure_msg "unknown attribute $f1"
                     fi

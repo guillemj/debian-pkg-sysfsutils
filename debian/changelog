@@ -1,3 +1,11 @@
+sysfsutils (2.1.0-4) unstable; urgency=low
+
+  * debian/sysfsutils.init: Some attributes in sysfs need a terminating
+    newline, some don't, so try both. Thanks to Stefan Monnier for the patch!
+    (Closes: #459240, LP: #184783)
+
+ -- Martin Pitt <mpitt@debian.org>  Tue, 01 Apr 2008 16:53:02 +0200
+
 sysfsutils (2.1.0-3) unstable; urgency=low
 
   * debian/sysfsutils.init: Fix Default-Stop LSB header to not run in any
