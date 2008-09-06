@@ -1,3 +1,14 @@
+sysfsutils (2.1.0-5) unstable; urgency=low
+
+  * debian/rules: Fix dh_installinit call to not install stop symlinks. The
+    init script does not need to be called on stop. This also makes the
+    update-rc.d links consistent to the LSB header "Should-Stop" which insserv
+    complained about. (Closes: #497905)
+  * debian/libsysfs-dev.doc-base: Fix section name, thanks lintian.
+  * debian/control: Bump Standards-Version (no changes necessary).
+
+ -- Martin Pitt <mpitt@debian.org>  Sat, 06 Sep 2008 10:36:59 +0200
+
 sysfsutils (2.1.0-4) unstable; urgency=low
 
   * debian/sysfsutils.init: Some attributes in sysfs need a terminating
