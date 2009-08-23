@@ -3,7 +3,7 @@ Section: libs
 Priority: extra
 Maintainer: Martin Pitt <mpitt@debian.org>
 Build-Depends: cdbs, debhelper (>= 5.0.22), chrpath
-Standards-Version: 3.8.0
+Standards-Version: 3.8.3
 
 Package: libsysfs-dev
 Section: libdevel

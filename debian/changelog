@@ -1,3 +1,13 @@
+sysfsutils (2.1.0-6) unstable; urgency=low
+
+  * debian/sysfsutils.init: Make sure the init.d script runs after udev,
+    module-init-tools and loadcpufreq, to avoid trying to set kernel
+    parameters for kernel modules not yet loaded. Thanks to Petter
+    Reinholdtsen! (Closes: #539755)
+  * Bump Standards-Version to 3.8.3 (no changes necessary).
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 23 Aug 2009 20:05:02 +0200
+
 sysfsutils (2.1.0-5) unstable; urgency=low
 
   * debian/rules: Fix dh_installinit call to not install stop symlinks. The

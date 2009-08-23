@@ -3,6 +3,7 @@
 ### BEGIN INIT INFO
 # Provides:          sysfsconf
 # Required-Start:    mountkernfs
+# Should-Start:      udev module-init-tools loadcpufreq
 # Required-Stop:
 # Default-Start:     2 3 4 5
 # Default-Stop:
