@@ -1,6 +1,7 @@
-diff -ruN sysfsutils-2.0.0-old/lib/sysfs_utils.c sysfsutils-2.0.0/lib/sysfs_utils.c
---- sysfsutils-2.0.0-old/lib/sysfs_utils.c	2005-12-07 12:28:18.000000000 +0100
-+++ sysfsutils-2.0.0/lib/sysfs_utils.c	2006-03-06 19:06:11.000000000 +0100
+Index: sysfsutils-2.1.0+repack/lib/sysfs_utils.c
+===================================================================
+--- sysfsutils-2.1.0+repack.orig/lib/sysfs_utils.c	2006-08-07 07:08:01.000000000 +0200
++++ sysfsutils-2.1.0+repack/lib/sysfs_utils.c	2010-08-06 19:03:58.276747000 +0200
 @@ -22,6 +22,7 @@
   */
  #include "libsysfs.h"

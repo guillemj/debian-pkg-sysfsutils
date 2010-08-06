@@ -1,4 +1,3 @@
-build-tree/sysfsutils*/test/dlist_test.c
-build-tree/sysfsutils*/test/get_*.c
-build-tree/sysfsutils*/test/write_attr.c
+test/dlist_test.c
+test/get_*.c
 debian/README.Examples

@@ -1,3 +1,18 @@
+sysfsutils (2.1.0+repack-1) unstable; urgency=low
+
+  * Drop tarball.mk and tar-in-tar packaging and use upstream tarball as
+    orig.tar.gz now. This style is obsolete, we have much better tools now.
+  * Switch to dh compat 7.
+  * Add bzr-builddeb configuration (merge mode).
+  * debian/control: Add Vcs-Bzr:.
+  * Switch to 3.0 (quilt) source format, drop simple-patchsys.mk.
+  * debian/control: Add missing ${misc:Depends}.
+  * debian/control: Bump Standards-Version to 3.9.1.
+  * debian/sysfsutils.init: Start after cpufrequtils, to make sure that a
+    governor is selected and set up. Thanks Mario Holbe! (Closes: #590143)
+
+ -- Martin Pitt <mpitt@debian.org>  Fri, 06 Aug 2010 19:14:59 +0200
+
 sysfsutils (2.1.0-6) unstable; urgency=low
 
   * debian/sysfsutils.init: Make sure the init.d script runs after udev,
