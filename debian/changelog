@@ -1,3 +1,15 @@
+sysfsutils (2.1.0+repack-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * debian/sysfsutils.init:
+    - add support for changing permissions of folders too.      closes: #658365
+  * debian/control:
+    - fix typo in long description.
+    - add build-dep on autotools-dev to replace ancient autotools helpers.
+    - update standards version to 3.9.3. 
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 01 Jun 2012 09:34:05 +0200
+
 sysfsutils (2.1.0+repack-1) unstable; urgency=low
 
   * Drop tarball.mk and tar-in-tar packaging and use upstream tarball as

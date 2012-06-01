@@ -32,7 +32,7 @@ case "$1" in
               $CONFFILE | {
 	    while read f1 f2 f3; do
                 if [ "$f1" = "mode" -a -n "$f2" -a -n "$f3" ]; then
-                    if [ -f "/sys/$f2" ]; then
+                    if [ -f "/sys/$f2" ] || [ -d "/sys/$f2" ]; then
                         chmod "$f3" "/sys/$f2"
                     else
                         log_failure_msg "unknown attribute $f2"

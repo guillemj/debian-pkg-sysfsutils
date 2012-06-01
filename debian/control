@@ -2,8 +2,8 @@ Source: sysfsutils
 Section: libs
 Priority: extra
 Maintainer: Martin Pitt <mpitt@debian.org>
-Build-Depends: cdbs, debhelper (>= 7), chrpath
-Standards-Version: 3.9.1
+Build-Depends: cdbs, debhelper (>= 7), chrpath, autotools-dev
+Standards-Version: 3.9.3
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-core-dev/sysfsutils/debian
 
 Package: libsysfs-dev
@@ -45,7 +45,7 @@ Description: sysfs query tool and boot-time setup
  it: it can list devices by bus, class, and topology.
  .
  In addition this package ships a configuration file /etc/sysfs.conf which
- allows to conveniently set sysfs attributes at system bootup (in the init
+ allows one to conveniently set sysfs attributes at system bootup (in the init
  script /etc/init.d/sysfsutils).
  .
  If you need sysfs queries in own programs, then you may want to use the
