@@ -2,7 +2,7 @@ Source: sysfsutils
 Section: libs
 Priority: extra
 Maintainer: Martin Pitt <mpitt@debian.org>
-Build-Depends: cdbs, debhelper (>= 7), chrpath, autotools-dev
+Build-Depends: debhelper (>= 8.1.3), cdbs (>= 0.4.93~), chrpath, autotools-dev
 Standards-Version: 3.9.3
 Vcs-Bzr: https://code.launchpad.net/~ubuntu-core-dev/sysfsutils/debian
 
@@ -10,6 +10,7 @@ Package: libsysfs-dev
 Section: libdevel
 Priority: optional
 Architecture: any
+Multi-Arch: same
 Depends: ${misc:Depends}, libsysfs2 (= ${binary:Version})
 Description: interface library to sysfs - development files
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
@@ -23,7 +24,9 @@ Description: interface library to sysfs - development files
 
 Package: libsysfs2
 Architecture: any
+Multi-Arch: same
 Priority: important
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: interface library to sysfs
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
@@ -38,6 +41,7 @@ Description: interface library to sysfs
 Package: sysfsutils
 Section: utils
 Architecture: any
+Multi-Arch: foreign
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: sysfs query tool and boot-time setup
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
