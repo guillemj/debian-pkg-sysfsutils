@@ -1,3 +1,9 @@
+sysfsutils (2.1.0+repack-2) unstable; urgency=low
+
+  * Orphan package.
+
+ -- Martin Pitt <mpitt@debian.org>  Sun, 07 Oct 2012 15:51:14 +0200
+
 sysfsutils (2.1.0+repack-1.2) unstable; urgency=low
 
   * Non-maintainer upload.
