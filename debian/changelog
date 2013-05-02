@@ -1,3 +1,11 @@
+sysfsutils (2.1.0+repack-3) unstable; urgency=low
+
+  * QA upload.
+  * Add init script support for manipulating sysfs using fragments in
+    /etc/sysfs.d. (closes: #575459)
+
+ -- Chris Boot <bootc@bootc.net>  Thu, 02 May 2013 17:36:19 +0100
+
 sysfsutils (2.1.0+repack-2) unstable; urgency=low
 
   * Orphan package.
