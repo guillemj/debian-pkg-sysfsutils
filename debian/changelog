@@ -1,3 +1,10 @@
+sysfsutils (2.1.0+repack-4) unstable; urgency=medium
+
+  * QA upload.
+  * Call dh-autoreconf before building the package. (closes: #752828).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sat, 23 Aug 2014 19:14:39 +0200
+
 sysfsutils (2.1.0+repack-3) unstable; urgency=low
 
   * QA upload.

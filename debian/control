@@ -2,7 +2,7 @@ Source: sysfsutils
 Section: libs
 Priority: extra
 Maintainer: Debian QA Group <packages@qa.debian.org>
-Build-Depends: debhelper (>= 8.1.3), cdbs (>= 0.4.93~), chrpath, autotools-dev
+Build-Depends: debhelper (>= 8.1.3), cdbs (>= 0.4.93~), chrpath, autotools-dev, dh-autoreconf
 Standards-Version: 3.9.3
 
 Package: libsysfs-dev
