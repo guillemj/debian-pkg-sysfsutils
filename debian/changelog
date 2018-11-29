@@ -1,3 +1,12 @@
+sysfsutils (2.1.0+repack-5) unstable; urgency=medium
+
+  * QA upload
+  * Import packaging to https://salsa.debian.org
+  * Convert from cdbs to dh
+  * Bump debhelper compat to 11
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 28 Nov 2018 21:11:47 -0500
+
 sysfsutils (2.1.0+repack-4) unstable; urgency=medium
 
   * QA upload.

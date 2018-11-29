@@ -27,7 +27,7 @@ License for systool and lsbus (package sysfsutils):
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 On Debian systems, the complete text of the GNU General
-Public License can be found in '/usr/share/common-licenses/GPL'.
+Public License can be found in '/usr/share/common-licenses/GPL-2'.
 
 License for libsysfs (packages libsysfs0, libsysfs-dev):
 
@@ -46,5 +46,5 @@ License for libsysfs (packages libsysfs0, libsysfs-dev):
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 On Debian systems, the complete text of the GNU Lesser General
-Public License can be found in '/usr/share/common-licenses/LGPL'.
+Public License can be found in '/usr/share/common-licenses/LGPL-2.1'.
 
