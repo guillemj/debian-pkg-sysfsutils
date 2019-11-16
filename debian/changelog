@@ -34,6 +34,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
       Thanks to Thue Janus Kristensen <thuejk@gmail.com>.
     - Add a dummy status action. Closes: #832111
       Thanks to Raphaël Halimi <raphael.halimi@gmail.com>.
+    - Add glob(7) support in sysfs.conf. Closes: #604737
+      Thanks to Alex Sheppard <ams@corefiling.com>.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

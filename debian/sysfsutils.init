@@ -46,14 +46,16 @@ load_conffile() {
           log_failure_msg "unknown attribute $f2"
         fi
       elif [ "$f1" -a -n "$f2" -a -z "$f3" ]; then
-        if [ -f "/sys/$f1" ]; then
-          # Some fields need a terminating newline, others need the
-          # terminating newline to be absent. :-(
-          echo -n "$f2" >"/sys/$f1" 2>/dev/null ||
-            echo "$f2" >"/sys/$f1"
-        else
-          log_failure_msg "unknown attribute $f1"
-        fi
+        for path in /sys/$f1; do
+          if [ -f "$path" ]; then
+            # Some fields need a terminating newline, others need the
+            # terminating newline to be absent. :-(
+            echo -n "$f2" >"$path" 2>/dev/null ||
+              echo "$f2" >"$path"
+          else
+            log_failure_msg "unknown attribute $f1"
+          fi
+        done
       else
         log_failure_msg "syntax error in $CONFFILE: '$f1' '$f2' '$f3'"
         log_action_end_msg 1
