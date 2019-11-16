@@ -53,6 +53,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
     - We can also remove the deletion of *.la files, and just ignore them.
   * Add ${misc:Pre-Depends} to sysfsutils Pre-Depends, needed by the new
     invoke-rc.d --skip-systemd-native flag.
+  * Add a symbols file for the shared library.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
