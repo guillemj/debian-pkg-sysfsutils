@@ -29,6 +29,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Improve sysfsutils init script:
     - Fix indentation.
     - Fix LSB init output. Closes: #823082
+    - Move -e from shebang into a proper «set -e».
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

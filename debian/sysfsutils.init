@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 
 ### BEGIN INIT INFO
 # Provides:          sysfsconf
@@ -16,6 +16,8 @@
 # /etc/init.d/sysfsutils:
 #
 # (c) 2005 Martin Pitt <mpitt@debian.org>
+
+set -e
 
 CONFFILE=/etc/sysfs.conf
 CONFDIR=/etc/sysfs.d
