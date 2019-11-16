@@ -6,6 +6,9 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Update previous changelog entry with actual changes done.
   * Remove trailing spaces from debian/changelog.
   * Wrap and sort dependency fields.
+  * Switch to debhelper compatibility level 12.
+    - Remove unnecessary dh_missing override.
+  * Switch from debian/compat to debhelper-commpat in Build-Depends.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

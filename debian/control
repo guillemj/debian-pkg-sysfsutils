@@ -3,7 +3,7 @@ Section: libs
 Priority: optional
 Maintainer: Guillem Jover <guillem@debian.org>
 Build-Depends:
- debhelper (>= 11),
+ debhelper-compat (= 12),
  chrpath,
 Standards-Version: 3.9.3
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git

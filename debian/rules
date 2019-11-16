@@ -21,9 +21,6 @@ override_dh_install:
 	cp -L debian/tmp/lib/*/libsysfs.so.2 debian/libsysfs2-udeb/lib
 	chrpath -d debian/sysfsutils/usr/bin/*
 
-override_dh_missing:
-	dh_missing --list-missing
-
 override_dh_installinit:
 	dh_installinit -- start 20 2 3 4 5 .
 
