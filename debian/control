@@ -5,8 +5,8 @@ Maintainer: Guillem Jover <guillem@debian.org>
 Build-Depends: debhelper (>= 11),
                chrpath
 Standards-Version: 3.9.3
-Vcs-Browser: https://salsa.debian.org/debian/sysfsutils
-Vcs-Git: https://salsa.debian.org/debian/sysfsutils.git
+Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
+Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
 
 Package: libsysfs-dev
 Section: libdevel
