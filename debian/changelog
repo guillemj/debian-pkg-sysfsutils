@@ -38,6 +38,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
       Thanks to Alex Sheppard <ams@corefiling.com>.
     - Print an error instead of aborting when we cannot write an attribute
       value. Closes: #663202, #764000
+    - Print the actual configuration file (instead of always sysfs.conf) on
+      syntax errors.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

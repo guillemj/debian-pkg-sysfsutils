@@ -58,7 +58,7 @@ load_conffile() {
           fi
         done
       else
-        log_failure_msg "syntax error in $CONFFILE: '$f1' '$f2' '$f3'"
+        log_failure_msg "syntax error in $FILE: '$f1' '$f2' '$f3'"
         log_action_end_msg 1
         exit 1
       fi
