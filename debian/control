@@ -18,14 +18,13 @@ Depends:
  ${misc:Depends},
  libsysfs2 (= ${binary:Version}),
 Description: interface library to sysfs - development files
- Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
- tree of system devices. libsysfs provides a stable programming
- interface to sysfs and eases querying system devices and their
- attributes.
+ The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
+ a tree of system devices. libsysfs provides a stable programming interface
+ to sysfs and eases querying system devices and their attributes.
  .
- This package provides everything that is needed for developing own
- programs using libsysfs: C headers, a static library, documentation
- and example programs.
+ This package provides everything that is needed for developing programs
+ using libsysfs: C headers, a static library, documentation and example
+ programs.
 
 Package: libsysfs2
 Architecture: any
@@ -33,15 +32,12 @@ Multi-Arch: same
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: interface library to sysfs
- Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
- tree of system devices. libsysfs provides a stable programming
- interface to sysfs and eases querying system devices and their
- attributes.
+Description: interface library to sysfs - shared library
+ The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
+ a tree of system devices. libsysfs provides a stable programming interface
+ to sysfs and eases querying system devices and their attributes.
  .
- The package sysfsutils contains frontend programs that use this
- library. Development files and C examples are provided by the package
- libsysfs-dev.
+ This package provides the shared library.
 
 Package: sysfsutils
 Section: utils
@@ -52,16 +48,13 @@ Depends:
  ${shlibs:Depends},
  pci.ids,
 Description: sysfs query tool and boot-time setup
- Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
- tree of system devices. This package provides the program 'systool' to query
- it: it can list devices by bus, class, and topology.
+ The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
+ a tree of system devices. This package provides the program 'systool' to
+ query it, which can be used to list devices by bus, class, and topology.
  .
  In addition this package ships a configuration file /etc/sysfs.conf which
- allows one to conveniently set sysfs attributes at system bootup (in the init
- script /etc/init.d/sysfsutils).
- .
- If you need sysfs queries in own programs, then you may want to use the
- libsysfs library directly (package libsysfs-dev).
+ allows one to conveniently set sysfs attributes at system bootup (via an
+ init script).
 
 Package: libsysfs2-udeb
 Package-Type: udeb
@@ -70,10 +63,9 @@ Architecture: any
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
-Description: interface library to sysfs
- Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
- tree of system devices. libsysfs provides a stable programming
- interface to sysfs and eases querying system devices and their
- attributes.
+Description: interface library to sysfs - shared library
+ The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
+ a tree of system devices. libsysfs provides a stable programming interface
+ to sysfs and eases querying system devices and their attributes.
  .
- This is a minimal package for use in debian-installer.
+ This package provides the udeb shared library.
