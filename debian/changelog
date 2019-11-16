@@ -47,6 +47,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Perform a proper and correct /usr-merge transition by moving the package
     contents from / to /usr. This makes it possible to remove the special
     handling from debian/rules, and use stock debhelper install fragments.
+  * Set R³ to no.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

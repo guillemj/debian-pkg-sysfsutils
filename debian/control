@@ -2,6 +2,7 @@ Source: sysfsutils
 Section: libs
 Priority: optional
 Maintainer: Guillem Jover <guillem@debian.org>
+Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 12),
  chrpath,
