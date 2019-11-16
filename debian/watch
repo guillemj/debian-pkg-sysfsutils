@@ -1,3 +1,3 @@
 version=4
-opts="uversionmangle=s/-rc/~rc/" \
+opts="uversionmangle=s/-rc/~rc/, dversionmangle=s/\+repack\d*$//" \
 https://sf.net/linux-diag/ sysfsutils-(.*)\.tar\.gz
