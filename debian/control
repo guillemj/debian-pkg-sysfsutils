@@ -46,6 +46,7 @@ Multi-Arch: foreign
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+ lsb-base,
  pci.ids,
 Description: sysfs query tool and boot-time setup
  The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
