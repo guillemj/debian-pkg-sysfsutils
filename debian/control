@@ -50,6 +50,7 @@ Multi-Arch: foreign
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
+ pci.ids,
 Description: sysfs query tool and boot-time setup
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. This package provides the program 'systool' to query

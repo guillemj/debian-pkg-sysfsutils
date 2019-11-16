@@ -18,6 +18,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Move files to be installed in the filesystem from debian/ to debian/local/.
   * Switch to Standards-Version 4.4.1.
   * Use the correct pathname for pci.ids database.
+  * Add a Depends on pci.ids to sysfsutils.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
