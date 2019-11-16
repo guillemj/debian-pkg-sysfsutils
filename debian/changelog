@@ -15,6 +15,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Switch to debian/watch format 4.
   * Add a uversionmangle mapping to debian/watch for «-rc» versions.
   * Add a dversionmangle mapping to debian/watch for «+repackN» versions.
+  * Move files to be installed in the filesystem from debian/ to debian/local/.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
