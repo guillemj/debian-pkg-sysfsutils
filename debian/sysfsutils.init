@@ -51,7 +51,8 @@ load_conffile() {
             # Some fields need a terminating newline, others need the
             # terminating newline to be absent. :-(
             echo -n "$f2" >"$path" 2>/dev/null ||
-              echo "$f2" >"$path"
+              echo "$f2" >"$path" 2>/dev/null ||
+                log_failure_msg "cannot write value for attribute $f1"
           else
             log_failure_msg "unknown attribute $f1"
           fi
