@@ -26,6 +26,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
     - End sentences with a full-stop.
     - Use the project name in the .TH source field instead of the author.
     - Remove GNU/Linux from Debian reference.
+  * Improve sysfsutils init script:
+    - Fix indentation.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
