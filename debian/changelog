@@ -32,6 +32,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
     - Move -e from shebang into a proper «set -e».
     - Inject a trailing newline when parsing sysfs.conf. Closes: #638749
       Thanks to Thue Janus Kristensen <thuejk@gmail.com>.
+    - Add a dummy status action. Closes: #832111
+      Thanks to Raphaël Halimi <raphael.halimi@gmail.com>.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 

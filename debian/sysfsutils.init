@@ -73,10 +73,12 @@ start|restart|force-reload)
 
   log_action_end_msg 0
   ;;
+status)
+  ;;
 stop)
   ;;
 *)
-  echo "Usage: /etc/init.d/sysfsutils {start|stop|force-reload|restart}"
+  echo "Usage: /etc/init.d/sysfsutils {start|stop|force-reload|restart|status}"
   exit 1
   ;;
 esac
