@@ -8,6 +8,7 @@ Build-Depends:
 Standards-Version: 3.9.3
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
+Homepage: http://linux-diag.sourceforge.net/Sysfsutils.html
 
 Package: libsysfs-dev
 Section: libdevel

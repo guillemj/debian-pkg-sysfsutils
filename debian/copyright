@@ -1,9 +1,6 @@
 This package was debianized by Martin Pitt <mpitt@debian.org> on
 Wed, 6 Nov 2003 11:29:18 +0100.
 
-Upstream URL:
-    http://linux-diag.sourceforge.net/Sysfsutils.html
-
 Upstream Authors: 
     Ananth Mavinakayanahalli <ananth@in.ibm.com>
     Daniel Stekloff <dsteklof@us.ibm.com>
