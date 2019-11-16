@@ -1,3 +1,7 @@
+Author: Martin Pitt <mpitt@debian.org>
+Description: Check that sysfs is actually mounted in sysfs_get_mnt_path()
+ and fail if not. Fixes behavioural breakage compared to 1.3.
+
 Index: sysfsutils-2.1.0+repack/lib/sysfs_utils.c
 ===================================================================
 --- sysfsutils-2.1.0+repack.orig/lib/sysfs_utils.c	2006-08-07 07:08:01.000000000 +0200
