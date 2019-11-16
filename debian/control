@@ -2,8 +2,9 @@ Source: sysfsutils
 Section: libs
 Priority: optional
 Maintainer: Guillem Jover <guillem@debian.org>
-Build-Depends: debhelper (>= 11),
-               chrpath
+Build-Depends:
+ debhelper (>= 11),
+ chrpath,
 Standards-Version: 3.9.3
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
@@ -12,7 +13,9 @@ Package: libsysfs-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: ${misc:Depends}, libsysfs2 (= ${binary:Version})
+Depends:
+ ${misc:Depends},
+ libsysfs2 (= ${binary:Version}),
 Description: interface library to sysfs - development files
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming
@@ -26,7 +29,9 @@ Description: interface library to sysfs - development files
 Package: libsysfs2
 Architecture: any
 Multi-Arch: same
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: interface library to sysfs
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming
@@ -41,7 +46,9 @@ Package: sysfsutils
 Section: utils
 Architecture: any
 Multi-Arch: foreign
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: sysfs query tool and boot-time setup
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. This package provides the program 'systool' to query
@@ -58,7 +65,9 @@ Package: libsysfs2-udeb
 Package-Type: udeb
 Section: debian-installer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
 Description: interface library to sysfs
  Sysfs is a virtual file system in Linux kernel 2.5+ that provides a
  tree of system devices. libsysfs provides a stable programming
