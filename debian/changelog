@@ -30,6 +30,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
     - Fix indentation.
     - Fix LSB init output. Closes: #823082
     - Move -e from shebang into a proper «set -e».
+    - Inject a trailing newline when parsing sysfs.conf. Closes: #638749
+      Thanks to Thue Janus Kristensen <thuejk@gmail.com>.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
