@@ -49,6 +49,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
     handling from debian/rules, and use stock debhelper install fragments.
   * Set R³ to no.
   * Add description meta-headers for old patches.
+  * Add files not shipped to debian/not-installed.
+    - We can also remove the deletion of *.la files, and just ignore them.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
