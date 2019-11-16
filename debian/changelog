@@ -11,6 +11,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Switch from debian/compat to debhelper-commpat in Build-Depends.
   * Move Homepage from debian/copyright to debian/control.
   * Switch debian/copyright to the machine readable format 1.0.
+  * Switch URL in debian/watch to https.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
