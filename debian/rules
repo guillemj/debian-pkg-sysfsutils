@@ -9,16 +9,9 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs -Wl,--as-needed
 override_dh_autoreconf:
 	dh_autoreconf --as-needed
 
-override_dh_auto_configure:
-	dh_auto_configure -- --libdir=/lib/$(DEB_HOST_MULTIARCH)
-
 override_dh_install:
 	find debian/tmp -name '*.la' -print -delete
 	dh_install
-	mkdir -p debian/libsysfs-dev/usr/lib/$(DEB_HOST_MULTIARCH)
-	ln -s /lib/$(DEB_HOST_MULTIARCH)/libsysfs.so.2 debian/libsysfs-dev/usr/lib/$(DEB_HOST_MULTIARCH)/libsysfs.so
-	cp debian/tmp/lib/*/libsysfs.a debian/libsysfs-dev/usr/lib/$(DEB_HOST_MULTIARCH)
-	cp -L debian/tmp/lib/*/libsysfs.so.2 debian/libsysfs2-udeb/lib
 	chrpath -d debian/sysfsutils/usr/bin/*
 
 override_dh_makeshlibs:
