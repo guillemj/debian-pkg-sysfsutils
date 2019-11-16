@@ -42,6 +42,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
       syntax errors.
     - Make init script provide itself.
   * Add missing lsb-base Depends to sysfsutils.
+  * Cleanup old stop rcN.d symlinks from runlevels 0, 1 and 6. Closes: #555952
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
