@@ -57,6 +57,8 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Remove unnecessary chrpath from Build-Depends and dh_install override.
   * Add Build-Depends on debhelper (>= 12.3) to get automatic dh_makeshlibs
     udeb handling, so that we can remove the override.
+  * Remove --as-needed from DEB_LDFLAGS_MAINT_APPEND and from dh_autoreconf
+    override, as this is now the default in Debian.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
 
