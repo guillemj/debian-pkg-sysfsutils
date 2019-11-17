@@ -1,4 +1,4 @@
-sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
+sysfsutils (2.1.0+repack-6) unstable; urgency=medium
 
   * New maintainer. Closes: #689879
   * Update Vcs fields for move to git.hadrons.org.
@@ -60,7 +60,7 @@ sysfsutils (2.1.0+repack-6) UNRELEASED; urgency=medium
   * Remove --as-needed from DEB_LDFLAGS_MAINT_APPEND and from dh_autoreconf
     override, as this is now the default in Debian.
 
- -- Guillem Jover <guillem@debian.org>  Sat, 16 Nov 2019 17:57:19 +0100
+ -- Guillem Jover <guillem@debian.org>  Sun, 17 Nov 2019 04:10:56 +0100
 
 sysfsutils (2.1.0+repack-5) unstable; urgency=medium
 
