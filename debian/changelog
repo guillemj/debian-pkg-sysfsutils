@@ -7,6 +7,7 @@ sysfsutils (2.1.0+repack-7) UNRELEASED; urgency=medium
     - Remove trailing spaces.
     - Fix «e.g.» spelling and follow it by a «:».
   * Remove trailing whitespace from patch.
+  * Add debian/upstream/metadata file.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 09 Sep 2020 04:09:25 +0200
 
