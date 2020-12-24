@@ -5,6 +5,7 @@ Description: Improve systool(1) man page.
  - End sentences with a full-stop.
  - Use the project name in the .TH source field instead of the author.
  - Remove GNU/Linux from Debian reference.
+Forwarded: yes
 
 ---
  systool.1 |   40 ++++++++++++++++++++--------------------

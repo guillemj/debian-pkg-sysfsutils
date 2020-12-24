@@ -1,5 +1,6 @@
 Author: Guillem Jover <guillem@debian.org>
 Description: Use correct pathname for pci.ids on Debian systems.
+Forwarded: yes
 
 ---
  cmd/systool.c |    2 +-

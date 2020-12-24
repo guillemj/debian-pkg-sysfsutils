@@ -1,6 +1,7 @@
 Author: Aurelien Jarno <aurel32@debian.org>
 Description: Add missing declaration for macro directory so that autoreconf
  does not fail.
+Forwarded: yes
 
 --- a/configure.ac
 +++ b/configure.ac
