@@ -49,7 +49,7 @@ Index: sysfsutils-2.1.0+repack/lib/sysfs_utils.c
 +			break;
 +		}
 +	}
-+	
++
 +	endmntent(mnt);
 +
 +	if (ret < 0)
