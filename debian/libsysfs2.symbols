@@ -28,6 +28,8 @@ libsysfs.so.2 libsysfs2 #MINVER#
  (optional)get_attribute@Base 2.0.0
  (optional)get_attributes_list@Base 2.0.0
  (optional)get_dev_attributes_list@Base 2.0.0
+ (optional)my_strncat@Base 2.1.1
+ (optional)my_strncpy@Base 2.1.1
  (optional)read_dir_links@Base 2.0.0
  (optional)read_dir_subdirs@Base 2.0.0
  sysfs_close_attribute@Base 2.0.0

@@ -8,7 +8,7 @@ Build-Depends:
 Standards-Version: 4.5.1
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
-Homepage: http://linux-diag.sourceforge.net/Sysfsutils.html
+Homepage: https://github.com/linux-ras/sysfsutils
 
 Package: libsysfs-dev
 Section: libdevel

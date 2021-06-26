@@ -1,3 +1,4 @@
 version=4
-opts="uversionmangle=s/-rc/~rc/, dversionmangle=s/\+repack\d*$//" \
-https://sf.net/linux-diag/ sysfsutils-(.*)\.tar\.gz
+opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%@PACKAGE@-$1.tar.gz%" \
+  https://github.com/linux-ras/sysfsutils/tags \
+  (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate

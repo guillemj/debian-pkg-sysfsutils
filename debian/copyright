@@ -1,12 +1,14 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Contact:
- Ananth Mavinakayanahalli <ananth@in.ibm.com>,
- Daniel Stekloff <dsteklof@us.ibm.com>,
+ Ananth Mavinakayanahalli <ananth@in.ibm.com>
+ Daniel Stekloff <dsteklof@us.ibm.com>
+ Mohan Kumar <mohan@in.ibm.com>
+ Nitin Vashisth <vnitin@in.ibm.com>
 
 Files:
  *
 Copyright:
- Copyright © IBM Corp. 2003
+ Copyright © IBM Corp. 2003-2005
 License: GPL-2+
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -29,7 +31,7 @@ Files:
  include/*
  lib/*
 Copyright:
- Copyright © IBM Corp. 2003
+ Copyright © IBM Corp. 2003-2005
 License: LGPL-2.1+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
