@@ -36,7 +36,7 @@ libsysfs.so.2 libsysfs2 #MINVER#
  sysfs_close_bus@Base 2.0.0
  sysfs_close_class@Base 2.0.0
  sysfs_close_class_device@Base 2.0.0
- sysfs_close_dev_tree@Base 2.0.0
+ (optional)sysfs_close_dev_tree@Base 2.1.0
  sysfs_close_device@Base 2.0.0
  sysfs_close_device_tree@Base 2.0.0
  sysfs_close_driver@Base 2.0.0
@@ -87,6 +87,6 @@ libsysfs.so.2 libsysfs2 #MINVER#
  sysfs_path_is_file@Base 2.0.0
  sysfs_path_is_link@Base 2.0.0
  sysfs_read_attribute@Base 2.0.0
- sysfs_read_dir_subdirs@Base 2.0.0
+ sysfs_read_dir_subdirs@Base 2.1.0
  sysfs_remove_trailing_slash@Base 2.0.0
  sysfs_write_attribute@Base 2.0.0
