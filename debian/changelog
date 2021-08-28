@@ -10,6 +10,7 @@ sysfsutils (2.1.1-1) UNRELEASED; urgency=medium
   * Fix minimum versions in symbols file for sysfs_close_dev_tree and
     sysfs_read_dir_subdirs, which did not match their actual introduction
     in released tarballs from git history.
+  * Remove sysfsutils postinst, unnecessary after bullseye.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 26 Jun 2021 03:25:58 +0200
 
