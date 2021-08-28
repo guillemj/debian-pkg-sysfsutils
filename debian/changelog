@@ -11,6 +11,7 @@ sysfsutils (2.1.1-1) UNRELEASED; urgency=medium
     sysfs_read_dir_subdirs, which did not match their actual introduction
     in released tarballs from git history.
   * Remove sysfsutils postinst, unnecessary after bullseye.
+  * Add support for the noudeb build profile.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 26 Jun 2021 03:25:58 +0200
 

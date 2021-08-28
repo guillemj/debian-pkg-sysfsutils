@@ -61,6 +61,7 @@ Description: sysfs query tool and boot-time setup
 
 Package: libsysfs2-udeb
 Package-Type: udeb
+Build-Profiles: <!noudeb>
 Section: debian-installer
 Architecture: any
 Depends:
