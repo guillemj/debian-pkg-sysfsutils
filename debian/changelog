@@ -7,6 +7,7 @@ sysfsutils (2.1.1-1) unstable; urgency=medium
     - Remove all patches, merged upstream.
     - Do not install no longer provided NEWS file.
     - Fix over matching in cdev_name_equal(). Closes: #627048
+    - Fix symlink canonicalization in sysfs_get_link(). Closes: #481015
   * Fix minimum versions in symbols file for sysfs_close_dev_tree and
     sysfs_read_dir_subdirs, which did not match their actual introduction
     in released tarballs from git history.
