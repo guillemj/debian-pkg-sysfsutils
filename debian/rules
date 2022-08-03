@@ -3,5 +3,19 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
 
+include /usr/share/dpkg/pkg-info.mk
+
+%.5: %.pod
+	pod2man \
+	  --utf8 \
+	  --section=5 \
+	  --center=sysfsutils \
+	  --name=$(basename $(notdir $<)) \
+	  --date=$(shell date -d @$(SOURCE_DATE_EPOCH) -I) \
+	  --release=$(DEB_VERSION) \
+		$< >$@
+
+execute_before_dh_auto_build: debian/local/sysfs.conf.5
+
 %:
 	dh $@
