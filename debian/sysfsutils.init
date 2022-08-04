@@ -34,7 +34,7 @@ load_conffile() {
   ( cat "$FILE"; echo ) |
     sed  's/#.*$//; /^[[:space:]]*$/d;
           s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' |
-    while read f1 f2 f3; do
+    while read -r f1 f2 f3; do
       if [ "$f1" = "mode" ] && [ -n "$f2" ] && [ -n "$f3" ]; then
         if [ -f "/sys/$f2" ] || [ -d "/sys/$f2" ]; then
           chmod "$f3" "/sys/$f2"

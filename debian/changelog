@@ -2,6 +2,7 @@ sysfsutils (2.1.1-2) UNRELEASED; urgency=medium
 
   * Improve init script:
     - Do not use -o and -a for shell test command.
+    - Pass -r to read built-in.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 16 Aug 2022 14:03:51 +0200
 
