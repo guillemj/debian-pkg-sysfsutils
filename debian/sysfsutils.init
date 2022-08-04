@@ -26,6 +26,7 @@ if [ ! -r "$CONFFILE" ] && [ ! -d "$CONFDIR" ]; then
   exit 0
 fi
 
+# shellcheck disable=SC1091
 . /lib/lsb/init-functions
 
 load_conffile() {
