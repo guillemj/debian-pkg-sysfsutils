@@ -22,7 +22,9 @@ set -e
 CONFFILE=/etc/sysfs.conf
 CONFDIR=/etc/sysfs.d
 
-[ -r "$CONFFILE" -o -d "$CONFDIR" ] || exit 0
+if [ ! -r "$CONFFILE" ] && [ ! -d "$CONFDIR" ]; then
+  exit 0
+fi
 
 . /lib/lsb/init-functions
 
@@ -33,19 +35,19 @@ load_conffile() {
     sed  's/#.*$//; /^[[:space:]]*$/d;
           s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' |
     while read f1 f2 f3; do
-      if [ "$f1" = "mode" -a -n "$f2" -a -n "$f3" ]; then
+      if [ "$f1" = "mode" ] && [ -n "$f2" ] && [ -n "$f3" ]; then
         if [ -f "/sys/$f2" ] || [ -d "/sys/$f2" ]; then
           chmod "$f3" "/sys/$f2"
         else
           log_failure_msg "unknown attribute $f2"
         fi
-      elif [ "$f1" = "owner" -a -n "$f2" -a -n "$f3" ]; then
+      elif [ "$f1" = "owner" ] && [ -n "$f2" ] && [ -n "$f3" ]; then
         if [ -f "/sys/$f2" ]; then
           chown "$f3" "/sys/$f2"
         else
           log_failure_msg "unknown attribute $f2"
         fi
-      elif [ "$f1" -a -n "$f2" -a -z "$f3" ]; then
+      elif [ "$f1" ] && [ -n "$f2" ] && [ -z "$f3" ]; then
         for path in /sys/$f1; do
           if [ -f "$path" ]; then
             # Some fields need a terminating newline, others need the
