@@ -52,7 +52,7 @@ load_conffile() {
           if [ -f "$path" ]; then
             # Some fields need a terminating newline, others need the
             # terminating newline to be absent. :-(
-            echo -n "$f2" >"$path" 2>/dev/null ||
+            printf "%s" "$f2" >"$path" 2>/dev/null ||
               echo "$f2" >"$path" 2>/dev/null ||
                 log_failure_msg "cannot write value for attribute $f1"
           else
