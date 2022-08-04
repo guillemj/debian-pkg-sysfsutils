@@ -5,6 +5,7 @@ sysfsutils (2.1.1-2) UNRELEASED; urgency=medium
     - Pass -r to read built-in.
     - Use printf instead of undefined «echo -n».
     - Disable shellcheck following sourcing shell library file.
+    - Quote directory variable to avoid word-splitting.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 16 Aug 2022 14:03:51 +0200
 
