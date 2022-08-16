@@ -7,6 +7,8 @@ sysfsutils (2.1.1-2) UNRELEASED; urgency=medium
     - Disable shellcheck following sourcing shell library file.
     - Quote directory variable to avoid word-splitting.
   * Add sysfs.conf(5) man page. Closes: #526469
+  * Enable LFS build options. This should ABI safe for the shared library as
+    it does not expose any problematic type.
 
  -- Guillem Jover <guillem@debian.org>  Tue, 16 Aug 2022 14:03:51 +0200
 
