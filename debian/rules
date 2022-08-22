@@ -11,7 +11,7 @@ include /usr/share/dpkg/pkg-info.mk
 	  --section=5 \
 	  --center=sysfsutils \
 	  --name=$(basename $(notdir $<)) \
-	  --date=$(shell date -d @$(SOURCE_DATE_EPOCH) -I) \
+	  --date=$(shell date -u -d @$(SOURCE_DATE_EPOCH) -I) \
 	  --release=$(DEB_VERSION) \
 		$< >$@
 
