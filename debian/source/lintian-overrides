@@ -1,0 +1,2 @@
+# Upstream does not sign releases.
+sysfsutils: debian-watch-does-not-check-openpgp-signature [debian/watch]

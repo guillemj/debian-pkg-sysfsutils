@@ -1,6 +1,7 @@
 sysfsutils (2.1.1-4) UNRELEASED; urgency=medium
 
   * Switch to Standards-Version 4.6.2 (no changes needed).
+  * Add source lintian overrides.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 13 Jan 2023 00:02:27 +0100
 
