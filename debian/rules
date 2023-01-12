@@ -19,3 +19,6 @@ execute_before_dh_auto_build: debian/local/sysfs.conf.5
 
 %:
 	dh $@
+
+override_dh_installchangelogs:
+	dh_installchangelogs --no-trim

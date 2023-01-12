@@ -5,6 +5,7 @@ Maintainer: Guillem Jover <guillem@debian.org>
 Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
+ debhelper (>= 13.10),
 Standards-Version: 4.6.2
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
