@@ -4,6 +4,7 @@ sysfsutils (2.1.1-4) UNRELEASED; urgency=medium
   * Add source lintian overrides.
   * Do not trim debian/changelog.
   * Make globs in debhelper fragment files more specific.
+  * Replace sysfsutils Depends on lsb-base with sysvinit-utils >= 3.05-4~.
 
  -- Guillem Jover <guillem@debian.org>  Fri, 13 Jan 2023 00:02:27 +0100
 
