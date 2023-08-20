@@ -1,8 +1,8 @@
-sysfsutils (2.1.1-5) UNRELEASED; urgency=medium
+sysfsutils (2.1.1-5) unstable; urgency=medium
 
   * Add a systemd service file. Closes: #1016610
 
- -- Guillem Jover <guillem@debian.org>  Tue, 08 Aug 2023 03:44:01 +0200
+ -- Guillem Jover <guillem@debian.org>  Sun, 20 Aug 2023 16:27:05 +0200
 
 sysfsutils (2.1.1-4) unstable; urgency=medium
 
