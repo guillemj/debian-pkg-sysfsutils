@@ -1,3 +1,3 @@
 test/dlist_test.c
 test/get_*.c
-debian/local/README.Examples
+debian/local/examples/*

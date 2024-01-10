@@ -4,6 +4,11 @@ sysfsutils (2.1.1-6) UNRELEASED; urgency=medium
     on dpkg-dev >= 1.22.0.
   * Turn function scoped variable into a local in init script.
   * Remove README.Debian, which contains obvious information.
+  * Improve examples scaffolding:
+    - Provide a stub config.h with constant contents needed by the examples.
+    - Provide a VPATH-enabled Makefile to build the examples.
+    - Rename README.Examples to README.
+    - Rewrite the README.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 10 Jan 2024 22:57:16 +0100
 

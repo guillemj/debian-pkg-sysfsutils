@@ -1,0 +1,15 @@
+libsysfs examples
+-----------------
+
+This directory contains the test programs for libsysfs as examples on
+how to use this library. They can be built on some user owned directory
+using the provided Makefile, such as:
+
+  $ mkdir sysfs-examples
+  $ cd sysfs-examples
+  $ make -f /usr/share/doc/libsysfs-dev/examples/Makefile
+
+The upstream documentation for the libsysfs API can be found at
+</usr/share/doc/libsysfs-dev/libsysfs.txt.gz>.
+
+ -- Guillem Jover <guillem@debian.org>  Wed, 10 Jan 2024 23:23:15 +0100
