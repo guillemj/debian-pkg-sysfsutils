@@ -3,6 +3,7 @@ sysfsutils (2.1.1-6) UNRELEASED; urgency=medium
   * Switch from future=+lfs to abi=+lfs build flags feature, and Build-Depends
     on dpkg-dev >= 1.22.0.
   * Turn function scoped variable into a local in init script.
+  * Remove README.Debian, which contains obvious information.
 
  -- Guillem Jover <guillem@debian.org>  Wed, 10 Jan 2024 22:57:16 +0100
 
