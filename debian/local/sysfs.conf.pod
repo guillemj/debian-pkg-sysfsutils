@@ -61,6 +61,8 @@ the B<=> character are ignored.
 Comments start with a B<#> character until the end of line.
 Empty or whitespace-only lines are also ignored.
 
+The I<attribute> paths support L<glob(7)> wildcard patterns.
+
 Any I<attribute> that does not exist will be warned about, but will not cause
 the loading to fail.
 

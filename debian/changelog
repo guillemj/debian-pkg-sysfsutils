@@ -1,6 +1,7 @@
 sysfsutils (2.1.1-7) UNRELEASED; urgency=medium
 
   * Update debian/.gitignore file.
+  * Update sysfs.conf(5) to mention that it supports glob wildcards.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 15 Mar 2025 03:07:34 +0100
 
