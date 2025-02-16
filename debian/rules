@@ -5,15 +5,17 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,-z,defs
 
 include /usr/share/dpkg/pkg-info.mk
 
-%.5: %.pod
-	pod2man \
+MANGEN = pod2man \
 	  --utf8 \
-	  --section=5 \
+	  --section=$(subst .,,$(suffix $@)) \
 	  --center=sysfsutils \
 	  --name=$(basename $(notdir $<)) \
 	  --date=$(shell date -u -d @$(SOURCE_DATE_EPOCH) -I) \
 	  --release=$(DEB_VERSION) \
 		$< >$@
+
+%.5: %.pod
+	$(MANGEN)
 
 execute_before_dh_auto_build: debian/local/sysfs.conf.5
 
