@@ -10,7 +10,7 @@ ConditionPathExists=/etc/sysfs.conf
 
 [Service]
 Type=oneshot
-ExecStart=/etc/init.d/sysfsutils start
+ExecStart=/usr/sbin/update-sysfs
 RemainAfterExit=yes
 
 [Install]

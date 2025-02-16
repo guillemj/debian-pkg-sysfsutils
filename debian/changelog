@@ -3,6 +3,8 @@ sysfsutils (2.1.1-7) UNRELEASED; urgency=medium
   * Update debian/.gitignore file.
   * Update sysfs.conf(5) to mention that it supports glob wildcards.
   * Generalize man page section computation in debian/rules.
+  * Split sysfs update logic into a new update-sysfs(8) script in Perl.
+    Closes: #1061590
 
  -- Guillem Jover <guillem@debian.org>  Sat, 15 Mar 2025 03:07:34 +0100
 

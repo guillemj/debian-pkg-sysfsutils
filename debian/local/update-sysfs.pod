@@ -1,0 +1,53 @@
+# update-sysfs manual page (update-sysfs.1)
+#
+# Copyright © 2025 Guillem Jover <guillem@debian.org>
+#
+# This is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+=encoding utf8
+
+=head1 NAME
+
+update-sysfs - Linux sysfs attributes update tool
+
+=head1 DESCRIPTION
+
+This tool update the Linux B<sysfs> attribute values and modify their
+file mode or owner,
+usually during the system boot.
+
+Note that this tool and its configuration files are concerned with the
+F</sys> filesystem and should not be confused with the F</etc/sysctl.conf>
+configuration which is concerned with the F</proc/sys> filesystem instead.
+
+=head1 FILES
+
+=over
+
+=item F</etc/sysfs.conf>
+
+The main configuration file.
+It gets loaded first if readable.
+
+=item F</etc/sysfs.d/*.conf>
+
+The optional configuration fragment files.
+These get loaded after the main configuration file, if readable,
+in glob order.
+
+=back
+
+=head1 SEE ALSO
+
+L<sysfs.conf(5)>.

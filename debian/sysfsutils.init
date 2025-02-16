@@ -29,54 +29,10 @@ fi
 # shellcheck disable=SC1091
 . /lib/lsb/init-functions
 
-load_conffile() {
-  local FILE="$1"
-
-  ( cat "$FILE"; echo ) |
-    sed  's/#.*$//; /^[[:space:]]*$/d;
-          s/^[[:space:]]*\([^=[:space:]]*\)[[:space:]]*\([^=[:space:]]*\)[[:space:]]*=[[:space:]]*\(.*\)/\1 \2 \3/' |
-    while read -r f1 f2 f3; do
-      if [ "$f1" = "mode" ] && [ -n "$f2" ] && [ -n "$f3" ]; then
-        if [ -f "/sys/$f2" ] || [ -d "/sys/$f2" ]; then
-          chmod "$f3" "/sys/$f2"
-        else
-          log_failure_msg "unknown attribute $f2"
-        fi
-      elif [ "$f1" = "owner" ] && [ -n "$f2" ] && [ -n "$f3" ]; then
-        if [ -f "/sys/$f2" ]; then
-          chown "$f3" "/sys/$f2"
-        else
-          log_failure_msg "unknown attribute $f2"
-        fi
-      elif [ "$f1" ] && [ -n "$f2" ] && [ -z "$f3" ]; then
-        for path in /sys/$f1; do
-          if [ -f "$path" ]; then
-            # Some fields need a terminating newline, others need the
-            # terminating newline to be absent. :-(
-            printf "%s" "$f2" >"$path" 2>/dev/null ||
-              echo "$f2" >"$path" 2>/dev/null ||
-                log_failure_msg "cannot write value for attribute $f1"
-          else
-            log_failure_msg "unknown attribute $f1"
-          fi
-        done
-      else
-        log_failure_msg "syntax error in $FILE: '$f1' '$f2' '$f3'"
-        log_action_end_msg 1
-        exit 1
-      fi
-    done
-}
-
 case "$1" in
 start|restart|force-reload)
   log_action_begin_msg "Setting sysfs variables..."
-
-  for file in $CONFFILE "$CONFDIR"/*.conf; do
-    [ -r "$file" ] || continue
-    load_conffile "$file"
-  done
-
+  update-sysfs
   log_action_end_msg 0
   ;;
 status)

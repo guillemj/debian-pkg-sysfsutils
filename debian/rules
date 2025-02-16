@@ -17,7 +17,13 @@ MANGEN = pod2man \
 %.5: %.pod
 	$(MANGEN)
 
-execute_before_dh_auto_build: debian/local/sysfs.conf.5
+%.8: %.pod
+	$(MANGEN)
+
+execute_before_dh_auto_build: \
+	debian/local/sysfs.conf.5 \
+	debian/local/update-sysfs.8 \
+	# EOL
 
 %:
 	dh $@

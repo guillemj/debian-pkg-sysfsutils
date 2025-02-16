@@ -1,0 +1,143 @@
+#!/usr/bin/perl
+#
+# Copyright © 2005 Martin Pitt <mpitt@debian.org>
+# Copyright © 2019-2025 Guillem Jover <guillem@debian.org>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+use strict;
+use warnings;
+
+use Scalar::Util qw(looks_like_number);
+
+my $PROG = 'update-sysfs';
+
+my $CONFFILE = '/etc/sysfs.conf';
+my $CONFDIR = '/etc/sysfs.d';
+
+sub error
+{
+    print { \*STDERR } "$PROG: error: @_\n";
+    exit 1;
+}
+
+sub warning
+{
+    print { \*STDERR } "$PROG: warning: @_\n";
+    return;
+}
+
+sub set_attr
+{
+    my ($path, $value) = @_;
+
+    open my $fh, '>', $path
+        or return 0;
+
+    # Some fields need a terminating newline, others need the terminating
+    # newline to be absent. :-(
+    printf { $fh } '%s', $value
+        or printf { $fh } "%s\n", $value
+        or return 0;
+
+    close $fh;
+
+    return 1;
+}
+
+sub load_config
+{
+    my $file = shift;
+
+    open my $fh, '<', $file
+        or error "cannot open file $file: $!";
+
+    while (<$fh>) {
+        # Remove comments.
+        s{#.*$}{};
+
+        # Remove spaces.
+        s{^\s*}{};
+        s{\s*$}{};
+
+        next unless length;
+
+        if (m{^(.+)\s*=\s*(.+)$}) {
+            my $action = 'set';
+            my $attr = $1;
+            my $value = $2;
+
+            if ($attr =~ s{^mode\s*}{}) {
+                $action = 'chmod';
+            } elsif ($attr =~ s{^owner\s*}{}) {
+                $action = 'chown';
+            }
+
+            foreach my $path (glob "/sys/$attr") {
+                if (($action eq 'set' && ! -f $path) ||
+                    (! -f $path && ! -d $path)) {
+                    warning("unknown attribute $path, in $file at line $.");
+                    next;
+                }
+
+                if ($action eq 'set' && ! set_attr($path, $value)) {
+                    warning("cannot write value '$value' for attribute $path, in $file at line $.: $!");
+                } elsif ($action eq 'chmod') {
+                    my $mode = $value;
+
+                    if (looks_like_number($mode)) {
+                        chmod oct($mode), $path
+                            or warning("cannot set permission '$mode' for attribute $path, in $file at line $.: $!");
+                    } else {
+                        warning("use of symbolic modes (like '$mode') are deprecated, use an octal mode instead, in $file at line $.");
+                        system('chmod', $mode, $path) == 0
+                            or warning("cannot set permission '$mode' for attribute $path, in $file at line $. (via external chmod): $?");
+                    }
+                } elsif ($action eq 'chown') {
+                    my ($user, $group) = split /:/, $value;
+                    my ($uid, $gid) = (-1, -1);
+
+                    $uid = looks_like_number($user) ? $user : (getpwnam $user) // -1;
+                    if ($uid < 0) {
+                        warning("user name '$user' does not exist, ignoring user, in $file at line $.");
+                    }
+                    if (defined $group) {
+                        $gid = looks_like_number($group) ? $group : (getgrnam $group) // -1;
+                        if ($gid < 0) {
+                            warning("group name '$group' does not exist, ignoring group, in $file at line $.");
+                        }
+                    }
+
+                    chown $uid, $gid, $path
+                        or warning("cannot set ownership '$value' for attribute $path, in $file at line $.: $!");
+                }
+            }
+        } else {
+            error("syntax error in $file, line $.: $_");
+        }
+    }
+
+    close $fh;
+}
+
+if (! -r $CONFFILE && ! -d $CONFDIR) {
+  exit 0;
+}
+
+foreach my $file (($CONFFILE, glob "$CONFDIR/*.conf")) {
+    next unless -r $file;
+    load_config($file);
+}
+
+1;

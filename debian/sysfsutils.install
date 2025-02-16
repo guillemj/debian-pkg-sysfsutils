@@ -1,4 +1,5 @@
 usr/bin/systool
 usr/share/man/man1/
 debian/local/sysfs.conf etc/
+debian/local/update-sysfs usr/sbin
 

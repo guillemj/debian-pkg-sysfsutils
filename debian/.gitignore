@@ -1,2 +1,3 @@
 debhelper-build-stamp
 local/sysfs.conf.5
+local/update-sysfs.8
