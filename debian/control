@@ -7,7 +7,7 @@ Build-Depends:
  debhelper-compat (= 13),
  debhelper (>= 13.10),
  dpkg-dev (>= 1.22.0),
-Standards-Version: 4.6.2
+Standards-Version: 4.7.2
 Vcs-Browser: https://git.hadrons.org/cgit/debian/pkgs/sysfsutils.git
 Vcs-Git: https://git.hadrons.org/git/debian/pkgs/sysfsutils.git
 Homepage: https://github.com/linux-ras/sysfsutils
