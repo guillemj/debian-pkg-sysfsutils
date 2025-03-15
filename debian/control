@@ -50,7 +50,6 @@ Pre-Depends:
 Depends:
  ${misc:Depends},
  ${shlibs:Depends},
- sysvinit-utils (>= 3.05-4~),
  pci.ids,
 Description: sysfs query tool and boot-time setup
  The sysfs is a virtual file system found in Linux kernels 2.5+ that provides
