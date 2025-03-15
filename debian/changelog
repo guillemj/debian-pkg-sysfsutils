@@ -6,6 +6,7 @@ sysfsutils (2.1.1-7) UNRELEASED; urgency=medium
   * Split sysfs update logic into a new update-sysfs(8) script in Perl.
     Closes: #1061590
   * Place copyright years before copyright author in debian/copyright entries.
+  * Update copyright holders.
 
  -- Guillem Jover <guillem@debian.org>  Sat, 15 Mar 2025 03:07:34 +0100
 
