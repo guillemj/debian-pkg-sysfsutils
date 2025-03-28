@@ -1,4 +1,4 @@
-sysfsutils (2.1.1-7) UNRELEASED; urgency=medium
+sysfsutils (2.1.1-7) unstable; urgency=medium
 
   * Update debian/.gitignore file.
   * Update sysfs.conf(5) to mention that it supports glob wildcards.
@@ -11,7 +11,7 @@ sysfsutils (2.1.1-7) UNRELEASED; urgency=medium
   * Remove now unnecessary dependency on sysvinit-utils, after lsb-base
     transition is over.
 
- -- Guillem Jover <guillem@debian.org>  Sat, 15 Mar 2025 03:07:34 +0100
+ -- Guillem Jover <guillem@debian.org>  Fri, 28 Mar 2025 10:11:56 +0100
 
 sysfsutils (2.1.1-6) unstable; urgency=medium
 
